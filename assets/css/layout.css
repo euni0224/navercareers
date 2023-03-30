@@ -1,0 +1,93 @@
+@import './font.css'; @import './reset.css'; @import './common.css';
+.header { position: fixed; top: 0; left: 0; background: #fff; width: 100%; z-index: 20; } 
+.header.on::before { content: ''; position: absolute; top: 100%; height: 182px; width: 100%; background: #fff; } 
+
+.header .inner { height: 64px; display: flex; } 
+.header h1 { display: flex; align-items: center; } 
+.header h1 a { background-position: -105px 0px; width: 223px; height: 35px; display: block; } 
+
+.gnb { display: flex; flex: 1; justify-content: space-between; } 
+.gnb .gnb-list { display: flex; margin-left: 29px; font-size: 17px; line-height: 32px; letter-spacing: -0.36px; } 
+.gnb .gnb-list .gnb-item { display: flex; align-items: center; position: relative; } 
+.gnb .gnb-list a { line-height: 32px; padding: 0 10px; } 
+.gnb .gnb-list a span { position: relative; } 
+.gnb .gnb-list a:hover span::after { content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 1px; background: #000; } 
+.gnb .gnb-list .sub-list { position: absolute; background: #fff; top: 100%; white-space: nowrap; height: 182px; flex-direction: column; justify-content: center; display: none; } 
+.gnb .gnb-list .sub-list.show { display: flex; } 
+
+
+
+.side-gnb { position: fixed; z-index: 20; top: 60px; right: -100%; width: 100%; height: 100%; background: #fff; transition: 0.3s; visibility: hidden; } 
+.side-gnb.on { right: 0; visibility: hidden; } 
+.side-gnb .gnb-list { padding: 11px 0px 9px; } 
+.side-gnb .gnb-item.on { background-color: #f2f2f2; } 
+.side-gnb .gnb-list::after { content: ""; margin: 0 22px 0 22px; display: inline-block; width: calc(100% - 44px); height: 1px; background-color: #d0d0d0; } 
+.side-gnb .nav { padding: 0 22px; } 
+.side-gnb #mo-nav::after { content: ''; display: inline-block; vertical-align: top; margin: 20px 0 0 10px; background-position: -136px -49px; width: 10px; height: 6px; } 
+.side-gnb .gnb-item #mo-nav.on::after { transform: rotate(180deg); } 
+.side-gnb .gnb-item { font-size: 22px; line-height: 46px; letter-spacing: -0.44px; } 
+.side-gnb .sub-list { display: none; transition: 0; padding: 3px 22px 15px; background: #fff; } 
+.side-gnb .sub-item { font-size: 18px; line-height: 28px; letter-spacing: -0.36px; margin-top: 13px; padding: 0 22px; } 
+
+
+.header .btn-menu { display: none; background-position: -85px -28px; width: 20px; height: 14px; } 
+.header .btn-menu.on { background-position: -85px -49px; width: 15px; height: 15px; } 
+
+
+
+
+
+
+
+
+
+.footer { background-color: #f2f2f2; padding: 25px 0;} 
+.footer .inner { display: flex; align-items: center; } 
+.footer .group-addr { font-size: 18px; line-height: 32px; letter-spacing: -0.32px; } 
+
+.footer .group-policy { margin-left: 30px; font-size: 14px; line-height: 22px; letter-spacing: -0.28px; color: #909090; font-weight: bold; } 
+
+.footer .group-site { margin-left: auto; position: relative; } 
+.footer .group-site .site-text { width: 280px; border-bottom: 1px solid #000; line-height: 42px; text-align: left; background-color: #f2f2f2; } 
+.footer .group-site.on .site-text { padding: 0 12px; background: #fff; border-bottom: 0px solid #000; } 
+.footer .group-site::after { content: ""; position: absolute; top: 18px; right: 10px; margin-left: auto; width: 10px; height: 6px; background-position: -122px -93px; } 
+.footer .group-site.on::after { transform: rotate(180deg); } 
+.footer .group-site .site-list { display: none; position: absolute; font-size: 18px; line-height: 42px; background-color: #fff; bottom: 100%; } 
+.footer .group-site .site-item { width: 280px; } 
+.footer .group-site .site-item a { padding: 0 12px; } 
+
+
+
+
+
+/* 분기점 여러개가 나올수있음 */
+
+
+
+/* 아주작은pc */
+/* 1025보고잡자 */
+@media (max-width:1230px){
+    .gnb { display: none; } 
+    .header .btn-menu { display: block; } 
+    .header h1 a { background-position: 0px 0px; width: 160px; height: 23px; } 
+    .header .inner { justify-content: space-between; align-items: center; height: 60px; }
+    .side-gnb.on { visibility: visible;}  
+}
+
+/* 테블릿 1024~768 (ipad)*/
+/* 768보고잡자 */
+@media (max-width:1024px) { 
+
+    
+} 
+
+/* 모바일 767~320 */
+/* 320보고잡자 */
+@media (max-width:767px) {
+
+    .footer .inner { flex-direction: column; justify-content: center; align-items: center;} 
+    .footer .group-policy{margin-left: 0;}
+    .footer .group-site{margin-left: 0; width: 100%;}
+    .footer .group-site .site-text { width: 100%;}
+    .footer .group-site .site-list {width: inherit;}
+}

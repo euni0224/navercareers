@@ -1,0 +1,70 @@
+.blind { position: absolute; width: 1px; height: 1px; overflow: hidden; margin: -1px; clip: rect(0 0 0 0); } 
+
+
+.containar { margin-top: 64px; } 
+
+
+.inner { max-width: 1408px; margin: 0 auto; padding: 0 104px; } 
+.header .inner,
+.footer .inner { max-width: 1920px; } 
+
+
+
+
+
+.header h1 a { background-image: url(https://recruit.navercorp.com/share/tmplat/naver/img/sp_pc.png); background-size: 328px 205px; } 
+
+
+
+/* .header h1 a,.header .btn-menu,
+.header .btn-menu.on,
+.gnb .nav.sub::after { background-image: url(../images/logo.png); background-size: 195px 181px; } */
+
+.btn-nav,.sc-teams .teams-item .num::after,
+.sc-search .search-icon,
+.sc-navership a::after,
+.footer .group-site::after { background-image: url(../images/naver-main.png); background-size: 328px 205px; } 
+
+
+
+/* 분기점 여러개가 나올수있음 */
+
+
+
+/* 아주작은pc */
+/* 1025보고잡자 */
+@media (max-width:1230px){
+    .containar { margin-top: 60px; } 
+    .header .inner,
+    .footer .inner { padding: 0 22px; } 
+
+
+    .header .btn-menu,
+    .side-gnb #mo-nav::after,
+    .header h1 a { background-image: url(https://recruit.navercorp.com/share/tmplat/naver/img/sp_mo.png); background-size: 195px 181px; } 
+
+}
+
+/* 테블릿 1024~768 (ipad)*/
+/* 768보고잡자 */
+@media (max-width:1024px){
+    .inner { padding: 0 50px; } 
+}
+
+/* 모바일 767~320 */
+/* 320보고잡자 */
+@media (max-width:767px){
+    .inner { padding: 0 22px; } 
+}
+
+
+
+/* 
+ 1. 해당css들 밑에다가 미디어쿼리 작성
+ 2. css밑에다가 작성 (미디어쿼리가 계속나옴->scss라는 전처리도구를 활용하면 유용하게쓰임)
+ 3. 분기별 css파일을 만들고 분기별로 불러옴
+ mobile.css 
+ tablte.css 
+ <link href="tablet.css" media="screen and (min-width: 1024px)" rel="stylesheet"> -
+ <link href="mobile.css" media="screen and (min-width: 768px)" rel="stylesheet"> -
+*/
